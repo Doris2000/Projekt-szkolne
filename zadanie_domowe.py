@@ -17,3 +17,18 @@ while i!=0:
     else:
         print("Program sie zakonczyl \n")
         i=0
+while True:
+    numer=int(input("Podaj numer"))
+    if numer==1:
+        imie = input("podaj imie:")
+        nazwisko = input("podaj nazwisko:")
+        adres = input("podaj adres email:")
+        wiek = input("podaj wiek uzytkownika:")
+        user={"imie":imie,
+              "nazwisko":nazwisko,
+              "email":adres
+              "wiek":wiek}
+        pomoc.append(user)
+    elif numer==2:
+        imie1 = input("podaj imie:")
+        
