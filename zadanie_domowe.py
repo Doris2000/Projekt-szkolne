@@ -1,34 +1,25 @@
-i=1
-pomoc=[]
-while i!=0:
-    numer=int(input("podaj numer :"))
-    if numer==1:
-        imie = input("podaj imie:")
-        nazwisko = input("podaj nazwisko:")
-        adres= input("podaj adres email:")
-        wiek = input("podaj wiek uzytkownika:")
-        pomoc.append(imie)
-    elif numer==2:
-        imie1=input("podaj imie:")
-        print(f"imie uzytokownika to {imie1}, wiek {wiek}, email {adres} \n")
-        pomoc.append(imie1)
-    elif numer==3:
-        print(f"Wszytkie imiona to {pomoc} \n")
-    else:
-        print("Program sie zakonczyl \n")
-        i=0
-while True:
-    numer=int(input("Podaj numer"))
-    if numer==1:
-        imie = input("podaj imie:")
-        nazwisko = input("podaj nazwisko:")
-        adres = input("podaj adres email:")
-        wiek = input("podaj wiek uzytkownika:")
-        user={"imie":imie,
-              "nazwisko":nazwisko,
-              "email":adres
-              "wiek":wiek}
-        pomoc.append(user)
-    elif numer==2:
-        imie1 = input("podaj imie:")
-        
+baza_uzytkownikow=[]
+isrunning=True
+while isrunning==True:
+    number=int(input("Menu: \n1. Dodaj użytkownika\n2. Zobacz dane użytkownika\n3. Wyświetl wszyskie imiona użytkowników\n"))
+    if number==1:
+        imie=input("podaj imie:\n")
+        adres=input("podaj adres email:\n")
+        wiek=input("podaj wiek uzytkownika:\n")
+        user={"imie":imie,"adres":adres,"wiek":wiek}
+        baza_uzytkownikow.append(user)
+    elif number==2:
+        imie2=input("podaj imie:\n")
+        for osoba in baza_uzytkownikow:
+            if osoba["imie"]==imie2:
+                print(osoba)
+            else:
+                print("nie ma takiego uzytkownika")
+    elif number==3:
+        if len(baza_uzytkownikow)==0:
+            print("brak uzytkownikow")
+        for osoba in baza_uzytkownikow:
+            print(osoba["imie"])
+    elif number==4:
+        isrunning=False
+print(baza_uzytkownikow)
